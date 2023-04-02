@@ -1,0 +1,15 @@
+<section class="relative">
+    <%= image_tag  manga.animepath ,
+                    class: "bsm:h-full w-full"%>
+    <div class="flex flex-col items-center absolute top-0 w-full h-full 
+    hover:bg-black opacity-70 text-transparent hover:text-slate-50 
+    transition hover:delay-250">
+      <div class="my-auto w-3/4 text-center text-xs md:text-sm">
+         <p><%= manga.description %></p>
+      </div>
+      
+      <%= heroicon "heart", 
+      options: { class: "cursor-pointer h-6 w-6 md:w-10 
+      md:h-10 ml-auto mt-auto mr-3 mb-3"}%>
+    </div>
+</section>

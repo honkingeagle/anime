@@ -1,0 +1,20 @@
+<main class="bg-[#181A1B] p-1">
+  <section class="py-6 text-white opacity-60 flex items-center px-1 md:px-5">
+      <div class="text-md md:text-xl">Manga</div>
+      <div class="ml-auto text-sm">
+      <% if user_signed_in? %>
+        <%= current_user.email %>
+        <%= link_to "signout", destroy_user_session_path, class: "ml-5"%>
+      <% else %>
+        <%= link_to "login", new_user_session_path%>
+        <%= link_to "signup", new_user_registration_path,  class: "ml-2"%>
+      <%end%>
+      
+  </section>
+  <section class="grid bsm:grid-cols-2 md:grid-cols-3 bmd:grid-cols-3 gap-2">
+    <% @mangas.each do |manga|%>
+      <%= render "anime", manga: manga %>
+    <%end%>
+  </section>
+
+</main>
